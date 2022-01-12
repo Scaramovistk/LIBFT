@@ -14,33 +14,47 @@
 #include<fcntl.h> 
 #include<errno.h>
 #include <string.h>
+#include <unistd.h>
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+typedef struct
+s_list
 {
-	unsigned int	i;
+	void		*content;
+	struct s_list	*next;
+} t_list;
 
-	i = 0;
-	while (s[i])
-	{
-		(*f)(i, &s[i]);
-		++i;
-	}
-}
-
-void	ft_to_lowercase(unsigned int i, char *ch)
+t_list	*ft_lstnew(void *content)
 {
-	printf("s[%d] is %c\n", i, ch[0]);
-	if (ch[0] >= 65 && ch[0] <= 90)
-		ch[0] = ch[0] + 32;
+	t_list	*lst;
+
+	if (!(lst = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }
 
 int		main(void)
 {
-	char	s[] = "hELLO WORLD!";
-	// char	*s2;
+	t_list	*head;
+	int		data;
 
-	printf("Initial str is '%s'\n", s);
-	ft_striteri(s, &ft_to_lowercase);
-	printf("Transofrmed str is '%s'\n", s);
+	data = 11;
+	head = ft_lstnew((void *)&data);
+	printf("Content on p1 is equal to %d\n", *((int *)head->content));
+	return (0);
+}
+
+int		main(void)
+{
+	t_list	*lst;
+	int		data1 = 19;
+	int		data2 = 42;
+
+	lst = ft_lstnew((void *)&data1);
+	lst->next = ft_lstnew((void *)&data2);
+
+	printf("\nHead: %d, Tail%d\n\n", lst->content, lst->next->content);
+
 	return (0);
 }
