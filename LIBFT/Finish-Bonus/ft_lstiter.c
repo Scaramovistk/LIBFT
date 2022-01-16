@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,6 +13,7 @@
 //#include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct	s_list
 {
@@ -20,7 +21,31 @@ typedef struct	s_list
 	struct s_list	*next;
 }	t_list;
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	
+	if (!f || !lst)
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}
+
+void f(void *content)
+{
+	content = (int *)content + 1;
+}
+
+int main(void)
+{
+	t_list	lst;
+
+	lst.content = 10;
+	lst.next = NULL;
+	printf("Before :%d\n", (void *)lst.content);
+	ft_lstiter(&lst, &f);
+	printf("After :%d\n", (void *)lst.content);
+
+	return (0);
 }

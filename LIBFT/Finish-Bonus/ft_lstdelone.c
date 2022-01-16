@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,6 +13,7 @@
 //#include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct	s_list
 {
@@ -20,13 +21,15 @@ typedef struct	s_list
 	struct s_list	*next;
 }	t_list;
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void del(void *a)
 {
-	t_list	*tmp;
-	tmp = *lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = new;
+	printf("%d", (int *)a);
+}
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	del(lst->content);
+	free (lst);
 }
 
 t_list	*ft_lstnew(void *content)
@@ -41,24 +44,11 @@ t_list	*ft_lstnew(void *content)
 	return (list);
 }
 
-int		main(void)
+int main(void)
 {
-	t_list	*lst;
-	t_list	*tmp;
+	t_list *lst;
 
-	char *s1;
-	char *s2;
-
-	s1 = "Marco";
-	s2 = "Polo";
-	lst = ft_lstnew((void *)s1);
-	tmp = ft_lstnew((void *)s2);
-	ft_lstadd_back(&lst, tmp);
-	tmp = lst;
-	while (tmp != NULL)
-	{
-		printf("%s\n", ((char *)tmp->content));
-		tmp = tmp->next;
-	}
+	lst = ft_lstnew((void *)10);
+	ft_lstdelone(lst, &del);
 	return (0);
 }

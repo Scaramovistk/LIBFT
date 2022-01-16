@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,21 +13,13 @@
 //#include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct	s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*tmp;
-	tmp = *lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = new;
-}
 
 t_list	*ft_lstnew(void *content)
 {
@@ -41,23 +33,62 @@ t_list	*ft_lstnew(void *content)
 	return (list);
 }
 
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	new->next = *lst;
+	*lst = new;
+}
+
+void del(void *a)
+{
+	
+}
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*tmp;
+	t_list	*cr;
+
+	if (!lst || !del)
+		return ;
+	cr = *lst;
+	while (cr != NULL)
+	{
+		tmp = cr->next;
+		del(cr->content);
+		free(cr);
+		cr = tmp;
+	}
+	*lst = NULL;
+}
+
 int		main(void)
 {
+	char	*str[5];
+	int		size;
 	t_list	*lst;
 	t_list	*tmp;
 
-	char *s1;
-	char *s2;
-
-	s1 = "Marco";
-	s2 = "Polo";
-	lst = ft_lstnew((void *)s1);
-	tmp = ft_lstnew((void *)s2);
-	ft_lstadd_back(&lst, tmp);
-	tmp = lst;
+	str[0] = "Nerva";
+	str[1] = "Trajan";
+	str[2] = "Hadrian";
+	str[3] = "Antoninus";
+	str[4] = "Marcus Aurelius";
+	char	end[] = "Stat Roma pristina nomine, nomina nuda tenemus";
+	lst = ft_lstnew((void *)end);
+	size = 4;
+	// *** Add Front ***
+	while(size >= 0)
+	{
+		tmp = ft_lstnew((void *)str[size]);
+		ft_lstadd_front(&lst, tmp);
+		size--;
+	}
+	// *** Print After ***
+	ft_lstclear(lst, del);
 	while (tmp != NULL)
 	{
-		printf("%s\n", ((char *)tmp->content));
+		printf("\n%s\n\n", ((char *)tmp->content));
 		tmp = tmp->next;
 	}
 	return (0);
