@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 23:13:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	nstr[row] = '\0';
 	return (nstr);
 }
-
-//	char	f(unsigned int i, char c)
-//	{
-//		char str;
-//		str = c + 32;
-//		return (str);
-//	}
-//
-//	int	main(void)
-//	{
-//		char str1[] = "HELLO WORLD";
-//		char* str2;
-//		str2 = ft_strmapi(str1, *f);
-//		printf("%s\n", str2);
-//	}

@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 11:24:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/11 11:33:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -18,15 +20,3 @@ int	ft_isalpha(int c)
 	}
 	return (1);
 }
-
-//	#include <stdio.h>
-//	#include <ctype.h>
-//	int main (void)
-//	{
-//		char a[] = "zabc*15";
-//		int c;
-//		//c = isalpha(a[0]);
-//		c = ft_isalpha(a[4]);
-//		printf("%d", c);
-//		return (0);
-//	}

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <gscarama@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 13:00:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*p1;
 	unsigned char	*p2;
-	size_t	i;
+	size_t			i;
 
 	p1 = (unsigned char *)s1;
 	p2 = (unsigned char *)s2;
@@ -29,17 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-//	#include <stdio.h>
-//	#include <string.h>
-//	int main (void)
-//	{
-//		char s1[] = "AA";
-//		char s2[] = "Aa";
-//		char *p;
-//		int i;
-//		i = ft_memcmp(s1, s2, sizeof(char) * 2);
-//		printf("%d\n", i);
-//
-//		return 0;
-//	}

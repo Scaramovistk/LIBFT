@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 23:13:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,21 +68,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	ft_cutset(set, tmp1, tmp2);
 	len = ft_strlen(tmp2) + 1;
 	tmp1 = malloc(sizeof(char) * len);
-	if (!tmp1) // put both in the same ?
+	if (!tmp1)
 		return (NULL);
 	ft_strlcpy(tmp1, tmp2, len);
 	free(tmp2);
 	return (tmp1);
 }
-
-	// #include <stdio.h>
-	// int		main (void)
-	// {
-	// 	char	*dest;
-
-	// 	//printf("\nBefore:%s\n", s1);
-	// 	dest = ft_strtrim("   xxxtripouille   xxx", " x");
-	// 	printf("\nAfter:%s\n", dest);
-
-	// 	return (0);
-	// }

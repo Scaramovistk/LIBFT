@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <gscarama@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 13:00:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (0);
 }
-
-//	int main(void)
-//	{
-//		char a[]= "Hello howworl world how are you";
-//		char b[]= "world";
-//		char *c = ft_strnstr(a, b, sizeof(char) * 15);
-//		printf("%s\n", c);
-//
-//		return 0;
-//	}

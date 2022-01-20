@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <gscarama@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 07:14:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/15 07:06:10 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ char	*ft_strdup(const char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
-//	#include <stdio.h>
-//	int main (void)
-//	{
-//		char a[] = "hello world";
-//		char *b = ft_strdup(a);
-//		printf("%s", b);
-//	}

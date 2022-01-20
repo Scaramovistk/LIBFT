@@ -5,28 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <gscarama@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 07:14:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/15 07:06:10 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
-{
-	size_t	i;
-	size_t	row;
-
-	i = 0;
-	row = ft_strlen(dest);
-	while (i != size && src[i] != '\0')
-	{
-		dest[(row + i)] = src[i];
-		i++;
-	}
-	dest[(row + i)] = '\0';
-	return (sizeof(dest));
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -44,14 +28,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(nstr, s2, len);
 	return (nstr);
 }
-
-//	#include <stdio.h>
-//	int main(void)
-//	{
-//		char str1[] = "hello";
-//		char str2[] = "world";
-//		char *nstr = ft_strjoin(str1, str2);
-//
-//		printf("%s\n", nstr);
-//		return (0);
-//	}

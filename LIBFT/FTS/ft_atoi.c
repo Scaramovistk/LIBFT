@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
-	int				neg;
-	int				i;
-	unsigned int	nb;
+	int		neg;
+	int		i;
+	size_t	nb;
 
 	neg = 1;
 	i = 0;
@@ -38,13 +40,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)((nb) * (neg)));
 }
-
-//	#include <stdio.h>
-//	int main(void)
-//	{
-//		char a[] = " --184467441a493a455";
-//		unsigned int c = ft_atoi(a);
-//		printf("\nResult: %d\n\n", c);
-//
-//		return 0;
-//	}

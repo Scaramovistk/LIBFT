@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 20:24:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/11 11:34:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -18,15 +20,3 @@ int	ft_isdigit(int c)
 	}
 	return (1);
 }
-
-//	#include <stdio.h>
-//	#include <ctype.h>
-//	int main (void)
-//	{
-//		char a[] = "19zabc*15";
-//		int c;
-//		//c = isdigit(a[2]);
-//		c = ft_isdigit(a[2]);
-//		printf("%d", c);
-//		return (0);
-//	}

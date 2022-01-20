@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 11:24:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/11 11:33:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libc.h"
+#include "libft.h"
 
 void	ft_bzero(void *dst, size_t n)
 {
@@ -25,19 +24,3 @@ void	ft_bzero(void *dst, size_t n)
 		n--;
 	}
 }
-
-//	#include <stdlib.h>
-//	#include <stdio.h>
-//
-//	int main( void )
-//	{
-//		char buffer[80] = "hello world";
-//
-//		printf("Before:%s\n", buffer);
-//
-//		ft_bzero(buffer, 5);
-//
-//		printf("After:%s", buffer);
-//
-//		return 0;
-//	}

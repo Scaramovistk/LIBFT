@@ -29,21 +29,3 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	dest[row] = '\0';
 	return (len);
 }
-
-//	#include <stdio.h>
-//	int		main(void)
-//	{
-//		char src[] = "Source";
-//		char dest[] = "";
-//		int n;
-//		int c;
-//
-//		n = 0;
-//		c = 0;
-//		printf("BEFORE\n\tsrc: %s\n\tdes: %s\n\tsize: %d\n", src, dest, c);
-//
-//		c = ft_strlcpy(dest, src, 10);
-//
-//		printf("AFTER\n\tsrc: %s\n\tdes: %s\n\tsize: %d", src, dest, c);
-//		return (0);
-//	}

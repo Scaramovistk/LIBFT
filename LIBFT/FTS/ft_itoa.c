@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 23:13:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/08 23:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_size(int n)
 {
-	int	size;
+	int				size;
 	unsigned int	nb;
 
 	nb = n;
@@ -47,8 +46,8 @@ static void	ft_convnbr(char *str, int size, unsigned int n)
 
 char	*ft_itoa(int n)
 {
-	int		size;
-	char	*str;
+	int				size;
+	char			*str;
 	unsigned int	nb;
 
 	size = ft_size(n);
@@ -70,13 +69,3 @@ char	*ft_itoa(int n)
 	ft_convnbr(str, size, nb);
 	return (str);
 }
-
-	// #include <stdio.h>
-	// int	main(void)
-	// {
-	// 	//char *c = ft_itoa(42);
-	// 	char *c = ft_itoa(-2147483648);
-	// 	printf("str:%s\n", c);
-
-	// 	return (0);
-	// }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <gscarama@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 13:00:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t			i;
+	size_t	i;
 	char	*dest;
 	char	*serc;
 
@@ -28,16 +28,3 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-//	int main (void)
-//	{
-//		char    src[] = " worldHello";
-//		char    src2[] = " Helloworld";
-//
-//		ft_memmove(src, src2 + 3, 3);
-//		memmove(src, src2 + 3, 3);
-//
-//		printf("ft_memmove: %s\n", src);
-//		printf("memmove:    %s\n", src2);
-//		return (0);
-//	}

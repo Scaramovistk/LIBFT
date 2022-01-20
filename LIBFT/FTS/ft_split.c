@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 23:13:42 by gscarama          #+#    #+#             */
-/*   Updated: 2021/09/05 08:29:45 by gscarama         ###   ########.fr       */
+/*   Created: 2022/01/10 20:13:42 by gscarama          #+#    #+#             */
+/*   Updated: 2022/01/20 08:29:45 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,22 +111,3 @@ char	**ft_split(char const *s, char c)
 	ft_wrtmtx(strsplit, s, c, i);
 	return (strsplit);
 }
-
-// int	main(void)
-// {
-// 	int row;
-// 	char a[] = "--1-2--3---4----5-----42";
-// 	char **c;
-
-// 	printf("Before: %s\n", a);
-// 	c = ft_split(" Tripouille ", ' ');
-// 	row = 0;
-// 	while(c[row] != NULL)
-// 	{
-// 		printf("After:%s!\n", c[row]);
-// 		if (c[row] == NULL)
-// 			printf("...NULL...\n");
-// 		row++;
-// 	}
-// 	return (0);
-// }
