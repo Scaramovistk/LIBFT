@@ -17,12 +17,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	row;
 	char			*nstr;
 
-	nstr = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!(s) || !(f) || !(nstr))
-	{
-		free(nstr);
+	if (!s)
 		return (NULL);
-	}
+	nstr = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!(nstr))
+		return (NULL);
 	row = 0;
 	while (s[row])
 	{

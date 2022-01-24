@@ -15,27 +15,21 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*nstr;
-	size_t	row;
 	size_t	size;
 
-	row = 0;
+	if (!s)
+		return (0);
 	size = 0;
 	while (s[start + size] && size < len)
 		size++;
 	nstr = malloc(sizeof(*nstr) * (size + 1));
-	if (nstr == NULL || !s)
+	if (!nstr)
 		return (NULL);
 	if (start > ft_strlen(s))
 	{
 		ft_memset(nstr, 0, size + 1);
 		return (nstr);
 	}
-	while (row < size)
-	{
-		nstr[row] = s[start];
-		row++;
-		start++;
-	}
-	nstr[row] = '\0';
+	ft_strlcpy(nstr, &s[start], size + 1);
 	return (nstr);
 }

@@ -33,8 +33,6 @@ static size_t	ft_findsize(const char *s, char c)
 
 	size = 0;
 	row = 0;
-	if (s[0] == c)
-		size = 1;
 	while (s[row])
 	{
 		if (s[row] != c)
@@ -48,7 +46,7 @@ static size_t	ft_findsize(const char *s, char c)
 	return (size);
 }
 
-static char	*ft_strndup(const char *src, size_t size)
+static char	*ft_strndup(char const *src, size_t size)
 {
 	size_t	i;
 	char	*dest;
@@ -66,7 +64,7 @@ static char	*ft_strndup(const char *src, size_t size)
 	return (dest);
 }
 
-static void	ft_wrtmtx(char **strsplit, const char *s, char c, size_t i)
+static void	ft_wrtmtx(char **strsplit, char const *s, char c, size_t i)
 {
 	size_t	row;
 	size_t	size;
@@ -104,7 +102,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	row = ft_findsize(s, c);
-	strsplit = malloc(sizeof(char **) * row);
+	strsplit = malloc(sizeof(char **) * (row + 1));
 	if (!strsplit)
 		return (NULL);
 	i = 0;

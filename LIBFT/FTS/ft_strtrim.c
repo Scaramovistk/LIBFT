@@ -12,65 +12,44 @@
 
 #include "libft.h"
 
-static char	*ft_trimmed(const char *s1, const char set, char *dest)
+static size_t	ft_find(const char *set, char c)
 {
-	int	row;
-	int	wrt;
+	size_t	i;
 
-	row = 0;
-	wrt = 0;
-	while (s1[row] != '\0')
+	i = 0;
+	while (set[i])
 	{
-		while (s1[row] == set)
-			row++;
-		dest[wrt] = s1[row];
-		wrt++;
-		row++;
+		if (c == set[i])
+			return (1);
+		i++;
 	}
-	dest[wrt] = '\0';
-	return (dest);
-}
-
-static void	ft_cutset(const char *set, char *tmp1, char *tmp2)
-{
-	int	row;
-	int	len;
-
-	row = 0;
-	len = ft_strlen(tmp2) + 1;
-	while (set[row])
-	{
-		tmp1 = malloc(sizeof(char) * len);
-		if (!tmp1)
-			return ;
-		ft_trimmed(tmp2, (const char)set[row], tmp1);
-		len = ft_strlen(tmp1) + 1;
-		ft_strlcpy(tmp2, tmp1, len);
-		free(tmp1);
-		row++;
-	}
+	return (0);
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*tmp1;
-	char	*tmp2;
-	int		len;
-	int		row;
+	size_t		size;
+	size_t		end;
+	int			tmp;
+	char		*trimed;
 
-	row = 0;
-	tmp1 = NULL;
-	len = ft_strlen(s1) + 1;
-	tmp2 = malloc(sizeof(char) * len);
-	if (!tmp2)
+	if (!s1)
 		return (NULL);
-	ft_strlcpy(tmp2, (char *)s1, len);
-	ft_cutset(set, tmp1, tmp2);
-	len = ft_strlen(tmp2) + 1;
-	tmp1 = malloc(sizeof(char) * len);
-	if (!tmp1)
+	tmp = 0;
+	while (ft_find(set, s1[tmp]))
+		tmp++;
+	size = tmp;
+	tmp = ft_strlen(s1) - 1;
+	while (ft_find(set, s1[tmp]) && tmp > 0)
+		tmp--;
+	end = tmp + 1;
+	if (size >= end)
+		end = size;
+	trimed = malloc(sizeof(*s1) * (end - size + 1));
+	if (!trimed)
 		return (NULL);
-	ft_strlcpy(tmp1, tmp2, len);
-	free(tmp2);
-	return (tmp1);
+	if (size < end)
+		ft_memcpy(trimed, &s1[size], (end - size));
+	trimed[end - size] = '\0';
+	return (trimed);
 }
