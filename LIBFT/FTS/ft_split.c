@@ -21,6 +21,7 @@ static size_t	ft_freemx(char **strsplit, int i)
 			free(strsplit[i]);
 			i--;
 		}
+		free(strsplit);
 		return (1);
 	}
 	return (0);

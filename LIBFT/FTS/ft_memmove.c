@@ -37,13 +37,13 @@ static void	ft_copy(char *dest, char *serc, size_t n, int back)
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*dest;
-	char	*serc;
+	unsigned char	*dest;
+	unsigned char	*serc;
 
 	if (!dst && !src)
 		return (NULL);
-	dest = (char *) dst;
-	serc = (char *) src;
+	dest = (unsigned char *) dst;
+	serc = (unsigned char *) src;
 	if (dst > src)
 		ft_copy(dest, serc, n, 1);
 	else
